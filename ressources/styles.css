@@ -1,0 +1,184 @@
+@import url(web/variable-subsets/fonts.css);
+
+/** TODO : change source */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+/* "modern" reset technique : https://piccalil.li/blog/a-modern-css-reset/ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/**
+  * The art starts here
+  */
+/* https://coolors.co/65655e-7d80da-b0a3d4-cebacf-c6afb1 */
+:root {
+  /* Base */
+  --base : #FEDD0B;
+
+  /* Colors */
+  --text : rgba(0,0,0,.8);
+  --lighter: #ccc;
+
+  /* Sizes */
+  --flow-margin: 5rem;
+
+}
+
+::selection {
+  background-color: var(--text);
+  color: var(--base)
+}
+
+a {
+  color: var(--text);
+}
+
+address {
+  font-style: normal;
+}
+  
+html {
+  font-family: Quicksand, sans-serif;
+  font-weight: 500;
+  color: var(--text);
+  background-color: var(--base);
+}
+
+body {
+    padding: 1rem;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.section {
+  margin-bottom: var(--flow-margin)
+}
+
+.section__title {
+  margin-bottom: 1rem
+}
+
+.section--header {
+  display: flex;
+  place-items: center;
+  flex-flow: column;
+  gap: 2rem;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.section--header__title {
+  font-size: 4.5rem;
+}
+
+
+/** Buttons */
+.button {
+  color: var(--text);
+  text-decoration: none;
+  padding: .25rem 2rem .25rem 2rem;
+  border-radius: .5rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  border: .25rem solid var(--text);
+  box-shadow: 0 .5rem 0 0 var(--text);
+  transform: rotate(1deg);
+  transition: all .3s
+}
+
+.button:hover,
+.button:focus {
+  transform: rotate(0);
+  box-shadow: 0 1rem 0 0 var(--text);
+  background-color: white
+}
+
+/** Highlight */
+.highlight {
+  background-color: var(--text);
+  color: white;
+  border-radius: .25rem;
+  transform: rotate(2deg);
+  padding: 0 .25rem;
+  display: inline-block;
+}
+
+/** Intro */
+.intro {
+  margin-bottom: 1rem
+}
