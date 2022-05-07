@@ -223,6 +223,8 @@ address { font-style: normal; }
 
 .button {
   display: inline-flex;
+  align-items: center;
+  gap: .5rem;
   padding: .5rem 1.5rem;
   text-decoration: none;
   font-size: 1.2rem;
@@ -231,13 +233,15 @@ address { font-style: normal; }
   border: 3px currentColor solid;
   background-color: var(--orange);
   box-shadow: var(--shadow) currentColor;
-  transition: box-shadow 300ms;
   font-size: 1.5rem;
+  transition: all 300ms;
 }
+
 
 
 .button:hover {
   box-shadow: 0 0 0 0 #000; 
+  background-color: #fff;
 }
 
 .button:active {
@@ -274,31 +278,13 @@ address { font-style: normal; }
     --root-font-size: 1.2em;
     --flow-margin: 5rem;
     --section-margin: 2rem;
-    --section-padding: 3rem;
-    --gap: 3rem;
+    --section-padding: 5rem;
   }
 
   .section {
-    display: grid;
-    grid-template-columns:  .5fr 1fr;
-    gap: var(--gap);
-  }
-
-  .section--contact, .section--legal {
-    display: flex;
-  }
-
-  .section__intro {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    justify-content: center;
-  }
+    padding-right: 20vw;
+    padding-left: 20vw;
   
-  .section__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align-last: left;
   }
+
 }
