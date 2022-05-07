@@ -1,7 +1,23 @@
-@import url(web/variable-subsets/fonts.css);
+@font-face {
+  font-family: 'Barlow';
+  src: url('fonts/Barlow-Regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
-/** TODO : change source */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@font-face {
+  font-family: 'Barlow';
+  src: url('fonts/Barlow-Extra-Bold-webfont.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+
+
 /* "modern" reset technique : https://piccalil.li/blog/a-modern-css-reset/ */
 /* Box sizing rules */
 *,
@@ -80,105 +96,209 @@ select {
 
 
 /**
-  * The art starts here
+  * The show starts here
   */
-/* https://coolors.co/65655e-7d80da-b0a3d4-cebacf-c6afb1 */
-:root {
-  /* Base */
-  --base : #FEDD0B;
 
-  /* Colors */
-  --text : rgba(0,0,0,.8);
-  --lighter: #ccc;
+  :root {
+    /* Base */
+    --orange : #f49600;
+    --blue : #00baee;
+  
+    /* Colors */
+    --text : rgba(0,0,0,.8);
+    --lighter: #ccc;
 
-  /* Sizes */
-  --flow-margin: 5rem;
+    /* Sizes */
+    --root-font-size: 1em;
+    --flow-margin: 2rem;
+    --section-margin: 2rem;
+    --section-padding: 2rem;
+    --gap: 1rem;
 
-}
+    /* Shadows */
+    --shadow : .25rem .25rem 0 0;
+  }
 
 ::selection {
   background-color: var(--text);
-  color: var(--base)
+  color: var(--orange);
 }
 
-a {
-  color: var(--text);
-}
+a {color: #000}
 
-address {
-  font-style: normal;
-}
-  
 html {
-  font-family: Quicksand, sans-serif;
-  font-weight: 500;
-  color: var(--text);
-  background-color: var(--base);
+  font-size: var(--root-font-size);
 }
 
 body {
-    padding: 1rem;
+  background-color: var(--orange);
+  font-family: 'Barlow', sans-serif;
+  line-height: 1.5;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  font-weight: 700;
-  line-height: 1.3;
+p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem;}
+h3 { font-size: 1.5rem;}
+
+address { font-style: normal; }
 
 .section {
-  margin-bottom: var(--flow-margin)
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: var(--section-padding);
 }
 
-.section__title {
-  margin-bottom: 1rem
+.header__logo {
+  max-width: 80%;
+  height: auto;
+  max-height: 15rem;
 }
 
 .section--header {
-  display: flex;
-  place-items: center;
-  flex-flow: column;
-  gap: 2rem;
+  background-color: #fff;
+}
+
+.section--presentation {
+  background-color: var(--orange);
+}
+
+.section--contact {
+  background-color: var(--blue);
+}
+
+.section--service {
+  background-color: #fff;
+}
+
+
+.horaires-list {
+  background-color: #fff;
+  list-style: none;
+  border: 3px solid #000;
+  box-shadow: .25rem .25rem 0 0 #000;
+  font-size: 2rem;
   text-align: center;
-  padding: 3rem 0;
+  font-weight: bold;
+  padding: calc(var(--section-padding) / 2);
+  margin: 0;
 }
 
-.section--header__title {
-  font-size: 4.5rem;
+.address-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.address-place {
+  display: block;
+  text-align: center;
 }
 
 
-/** Buttons */
+
+
+/** Composants  */
+
+
 .button {
-  color: var(--text);
+  display: inline-flex;
+  padding: .5rem 1.5rem;
   text-decoration: none;
-  padding: .25rem 2rem .25rem 2rem;
-  border-radius: .5rem;
-  font-weight: 700;
-  font-size: 1.25rem;
-  border: .25rem solid var(--text);
-  box-shadow: 0 .5rem 0 0 var(--text);
-  transform: rotate(1deg);
-  transition: all .3s
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  border: 3px currentColor solid;
+  background-color: var(--orange);
+  box-shadow: var(--shadow) currentColor;
+  transition: box-shadow 300ms;
+  font-size: 1.5rem;
 }
 
-.button:hover,
-.button:focus {
-  transform: rotate(0);
-  box-shadow: 0 1rem 0 0 var(--text);
-  background-color: white
+
+.button:hover {
+  box-shadow: 0 0 0 0 #000; 
 }
 
-/** Highlight */
-.highlight {
-  background-color: var(--text);
-  color: white;
-  border-radius: .25rem;
-  transform: rotate(2deg);
-  padding: 0 .25rem;
-  display: inline-block;
+.button:active {
+  background-color: #fff;
+  box-shadow: 0 0 0 0 #000;
 }
 
-/** Intro */
-.intro {
-  margin-bottom: 1rem
+.button--blue {
+  background-color: var(--blue);
+}
+
+
+
+
+/** Utilitaires */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+/** Responsive :) */
+
+@media(min-width: 50rem) {
+  :root {  
+    /* Sizes */
+    --root-font-size: 1.2em;
+    --flow-margin: 5rem;
+    --section-margin: 2rem;
+    --section-padding: 3rem;
+    --gap: 3rem;
+  }
+
+  .section {
+    display: grid;
+    grid-template-columns:  .5fr 1fr;
+    gap: var(--gap);
+  }
+
+  .section--contact, .section--legal {
+    display: flex;
+  }
+
+  .section__intro {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: center;
+  }
+  
+  .section__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align-last: left;
+  }
 }
