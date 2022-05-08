@@ -131,9 +131,10 @@ html {
 }
 
 body {
-  background-color: var(--orange);
+  background-color: #fff;
   font-family: 'Barlow', sans-serif;
   line-height: 1.5;
+  margin: 1rem
 }
 
 p {
@@ -164,39 +165,50 @@ address { font-style: normal; }
   padding: var(--section-padding);
 }
 
-.header__logo {
-  max-width: 80%;
-  height: auto;
-  max-height: 15rem;
-}
-
 .section--header {
   background-color: #fff;
+  text-align: center;
 }
 
 .section--presentation {
-  background-color: var(--orange);
+  
 }
 
 .section--contact {
-  background-color: var(--blue);
+  
 }
 
 .section--service {
   background-color: #fff;
 }
 
+.sticky-fingers {
+  position: sticky;
+  top: 1rem;
+}
+
+.header__logo {
+  max-width: 80%;
+  height: auto;
+  max-height: 15rem;
+}
 
 .horaires-list {
   background-color: #fff;
   list-style: none;
-  border: 3px solid #000;
-  box-shadow: .25rem .25rem 0 0 #000;
-  font-size: 2rem;
+  font-size: 1.3rem;
   text-align: center;
   font-weight: bold;
   padding: calc(var(--section-padding) / 2);
   margin: 0;
+
+  border: .2rem currentColor solid;
+  border-top-left-radius: 300px 20px;
+  border-top-right-radius: 15px 225px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius:15px 255px;
+  
+  box-shadow: .25rem .25rem 0 0 var(--orange);
 }
 
 .address-list {
@@ -222,6 +234,7 @@ address { font-style: normal; }
 
 
 .button {
+  padding: .5rem 1.5rem;
   display: inline-flex;
   align-items: center;
   gap: .5rem;
@@ -229,18 +242,20 @@ address { font-style: normal; }
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #000;
-  border: 3px currentColor solid;
-  background-color: var(--orange);
-  box-shadow: var(--shadow) currentColor;
-  font-size: 1.5rem;
+  box-shadow: .25rem .25rem 0 0 var(--blue), 0 0 0 0 #fff;
+  
+  border: .30rem currentColor solid;
+  border-top-left-radius: 300px 20px;
+  border-top-right-radius: 15px 225px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius:15px 255px;
+
   transition: all 300ms;
 }
 
 
-
 .button:hover {
-  box-shadow: 0 0 0 0 #000; 
+  box-shadow: 0 0 0 0 #000, 0 0 0 .5rem #fff; 
   background-color: #fff;
 }
 
@@ -278,7 +293,7 @@ address { font-style: normal; }
     --root-font-size: 1.2em;
     --flow-margin: 5rem;
     --section-margin: 2rem;
-    --section-padding: 5rem;
+    --section-padding: 3rem;
   }
 
   .section {
