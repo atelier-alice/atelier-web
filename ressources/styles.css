@@ -110,7 +110,6 @@ select {
 
     /* Sizes */
     --root-font-size: 1em;
-    --flow-margin: 2rem;
     --section-margin: 2rem;
     --section-padding: 2rem;
     --gap: 1rem;
@@ -137,13 +136,13 @@ body {
   margin: 1rem
 }
 
-p {
+p, ol, ul {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
 
-p:last-child {
-  margin-bottom: 0;
+li {
+  margin-bottom: .25rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -154,7 +153,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 { font-size: 3rem; }
 h2 { font-size: 2rem;}
-h3 { font-size: 1.5rem;}
+h3 { font-size: 1.6rem;}
+h4 { font-size: 1.5rem;}
+
+h2 {
+  text-align: center;
+}
 
 address { font-style: normal; }
 
@@ -166,20 +170,7 @@ address { font-style: normal; }
 }
 
 .section--header {
-  background-color: #fff;
   text-align: center;
-}
-
-.section--presentation {
-  
-}
-
-.section--contact {
-  
-}
-
-.section--service {
-  background-color: #fff;
 }
 
 .sticky-fingers {
@@ -193,22 +184,27 @@ address { font-style: normal; }
   max-height: 15rem;
 }
 
-.horaires-list {
-  background-color: #fff;
+.mimi {
+  padding: 0;
   list-style: none;
-  font-size: 1.3rem;
-  text-align: center;
-  font-weight: bold;
-  padding: calc(var(--section-padding) / 2);
-  margin: 0;
+}
 
-  border: .2rem currentColor solid;
-  border-top-left-radius: 300px 20px;
-  border-top-right-radius: 15px 225px;
-  border-bottom-right-radius: 225px 15px;
-  border-bottom-left-radius:15px 255px;
-  
-  box-shadow: .25rem .25rem 0 0 var(--orange);
+.mimi li {
+  border-bottom: 1px #ddd solid;
+  padding: .25rem 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.mimi strong {
+  font-weight: 100;
+}
+
+.mimi span {
+  text-align: right;
+}
+
+.horaires-list {
 }
 
 .address-list {
@@ -227,11 +223,12 @@ address { font-style: normal; }
   text-align: center;
 }
 
-
-
-
-/** Composants  */
-
+.drapeau {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
 
 .button {
   padding: .5rem 1.5rem;
@@ -291,15 +288,13 @@ address { font-style: normal; }
   :root {  
     /* Sizes */
     --root-font-size: 1.2em;
-    --flow-margin: 5rem;
     --section-margin: 2rem;
-    --section-padding: 3rem;
+    --section-padding: 2.5rem;
   }
 
   .section {
     padding-right: 20vw;
     padding-left: 20vw;
-  
   }
 
 }
