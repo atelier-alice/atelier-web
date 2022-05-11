@@ -204,7 +204,18 @@ address { font-style: normal; }
   text-align: right;
 }
 
-.horaires-list {
+.bloc-bordure {
+  font-size: 1.3rem;
+  text-align: center;
+  padding: calc(var(--section-padding) / 2);
+  margin: 0;
+  border: .2rem currentColor solid;
+  border-top-left-radius: 300px 20px;
+  border-top-right-radius: 15px 225px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius:15px 255px;
+
+  box-shadow: .25rem .25rem 0 0 var(--orange);
 }
 
 .address-list {
