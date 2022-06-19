@@ -133,7 +133,8 @@ body {
   background-color: #fff;
   font-family: 'Barlow', sans-serif;
   line-height: 1.5;
-  margin: 1rem
+  margin: 0;
+  padding: 0
 }
 
 p, ol, ul {
@@ -161,6 +162,10 @@ h2 {
 }
 
 address { font-style: normal; }
+
+.main-container {
+    margin: 1rem
+}
 
 .section {
   display: flex;
@@ -278,6 +283,32 @@ address { font-style: normal; }
 
 
 
+.message {
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-flow: column-reverse;
+  align-items: center;
+  gap: 1rem;
+
+  border: .30rem var(--orange) solid;
+  border-top-left-radius: 300px 20px;
+  border-top-right-radius: 15px 225px;
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius:15px 255px;
+
+  box-shadow: .25rem .25rem 0 0 var(--orange), 0 0 0 0 #fff;
+}
+
+.message p {
+  margin: 0
+}
+
+.message-logo {
+  max-height: 7rem;
+}
 
 /** Utilitaires */
 
@@ -308,4 +339,8 @@ address { font-style: normal; }
     padding-left: 20vw;
   }
 
+  .message {
+    flex-flow: row-reverse;
+    text-align: left
+  }
 }
