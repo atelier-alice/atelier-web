@@ -344,3 +344,8 @@ address { font-style: normal; }
     text-align: left
   }
 }
+
+.responsive-image {
+  max-width:100%;
+  height:auto;
+}
