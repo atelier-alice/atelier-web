@@ -338,11 +338,6 @@ address { font-style: normal; }
     padding-right: 20vw;
     padding-left: 20vw;
   }
-
-  .message {
-    flex-flow: row-reverse;
-    text-align: left
-  }
 }
 
 .responsive-image {
