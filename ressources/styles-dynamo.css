@@ -230,6 +230,18 @@ address { font-style: normal; }
 .image-annonce img {
 }
 
+.vendu {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding:0rem;
+}
+
+.vendu p {
+	width:50%;
+	margin:0.5rem;
+}
+
 .address-list {
   margin: 0;
   padding: 0;
